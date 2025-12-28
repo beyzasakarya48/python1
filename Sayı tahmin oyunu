@@ -1,0 +1,19 @@
+import random
+
+# Bilgisayar 1 ile 10 arasında rastgele bir sayı seçer
+gizli_sayi = random.randint(1, 10)
+
+print("1 ile 10 arasında bir sayı tuttum. Bakalım bilecek misin?")
+
+# Kullanıcıdan tahmin alıyoruz
+tahmin = int(input("Tahminin nedir?: "))
+
+# Mantıksal kontrol (Karar yapısı)
+if tahmin == gizli_sayi:
+    print("Tebrikler! Doğru bildin. 🎉")
+elif tahmin > gizli_sayi:
+    print("Çok yüksek söyledin, sayı daha küçüktü.")
+else:
+    print("Çok düşük söyledin, sayı daha büyüktü.")
+
+print(f"Tuttuğum sayı şuydu: {gizli_sayi}")
