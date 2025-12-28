@@ -1,0 +1,18 @@
+import random
+import string
+
+def sifre_olustur(uzunluk):
+    # Kullanılabilecek tüm karakterleri bir araya getiriyoruz
+    karakterler = string.ascii_letters + string.digits + string.punctuation
+    
+    # Karakter listesinden rastgele seçimler yaparak şifreyi kuruyoruz
+    sifre = "".join(random.choice(karakterler) for i in range(uzunluk))
+    
+    return sifre
+
+# Programın çalışması
+print("--- 🔐 Güvenli Şifre Oluşturucu ---")
+uzunluk = int(input("Şifreniz kaç karakter olsun? (Örn: 12): "))
+
+yeni_sifre = sifre_olustur(uzunluk)
+print(f"\nOluşturulan Şifre: {yeni_sifre}")
