@@ -1,0 +1,20 @@
+import random
+
+# Bilgisayar 1 ile 50 arasında rastgele bir sayı seçer
+hedef_sayi = random.randint(1, 50)
+deneme_sayisi = 0
+
+print("🎯 1 ile 50 arasında bir sayı tuttum. Tahmin etmeye çalış!")
+
+# 'True' olduğu sürece döngü sonsuza kadar döner (break görene kadar)
+while True:
+    tahmin = int(input("Tahminin: "))
+    deneme_sayisi += 1 # Her tahminde sayacı 1 artırırız
+
+    if tahmin < hedef_sayi:
+        print("Daha yüksek bir sayı söyle! ⬆️")
+    elif tahmin > hedef_sayi:
+        print("Daha düşük bir sayı söyle! ⬇️")
+    else:
+        print(f"🥳 Harika! {deneme_sayisi}. denemede doğru bildin!")
+        break # Doğru bilindiğinde döngüden çıkar
