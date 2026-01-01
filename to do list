@@ -1,0 +1,17 @@
+yapilacaklar = []
+
+while True:
+    print("\n1. Görev Ekle | 2. Listeyi Gör | 3. Çıkış")
+    secim = input("Seçiminiz: ")
+
+    if secim == "1":
+        gorev = input("Yeni görevi yazın: ")
+        yapilacaklar.append(gorev)
+        print("Görev listeye eklendi!")
+    elif secim == "2":
+        print("\n--- Yapılacaklar Listesi ---")
+        for i, gorev in enumerate(yapilacaklar, 1):
+            print(f"{i}. {gorev}")
+    elif secim == "3":
+        print("Güle güle!")
+        break
