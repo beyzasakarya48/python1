@@ -1,0 +1,12 @@
+import time
+
+saniye = int(input("Kaç saniyeden geri sayalım? "))
+
+print("Geri sayım başlıyor...")
+
+while saniye > 0:
+    print(saniye)
+    time.sleep(1) # Programı 1 saniye duraklatır
+    saniye -= 1
+
+print("Süre doldu! ⏰")
