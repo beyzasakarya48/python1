@@ -1,0 +1,17 @@
+import random
+
+secenekler = ["taş", "kağıt", "makas"]
+bilgisayar = random.choice(secenekler)
+
+kullanici = input("Taş mı, kağıt mı, makas mı? ").lower()
+
+print(f"Bilgisayarın seçimi: {bilgisayar}")
+
+if kullanici == bilgisayar:
+    print("Berabere!")
+elif (kullanici == "taş" and bilgisayar == "makas") or \
+     (kullanici == "kağıt" and bilgisayar == "taş") or \
+     (kullanici == "makas" and bilgisayar == "kağıt"):
+    print("Tebrikler, kazandın!")
+else:
+    print("Kaybettin, bir dahaki sefere!")
