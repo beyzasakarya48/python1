@@ -1,6 +1,6 @@
 import random
 
-# Bilgisayar 1 ile 10 arasında rastgele bir sayı seçer
+# Bilgisayar 1 ile 10 arasında rastgele bir sayı seçiyor 
 gizli_sayi = random.randint(1, 10)
 
 print("1 ile 10 arasında bir sayı tuttum. Bakalım bilecek misin?")
