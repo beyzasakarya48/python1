@@ -1,0 +1,19 @@
+def donusturucu():
+    print("--- Birim Dönüştürücü ---")
+    print("1. TL -> USD (Kur: 30.0)")
+    print("2. Celsius -> Fahrenheit")
+    
+    secim = input("Yapmak istediğiniz işlemi seçin (1/2): ")
+    
+    if secim == "1":
+        tl = float(input("Kaç TL dönüştürülecek?: "))
+        usd = tl / 30.0
+        print(f"{tl} TL = {usd:.2f} USD yapar.")
+    elif secim == "2":
+        celsius = float(input("Dereceyi girin (°C): "))
+        fahrenheit = (celsius * 9/5) + 32
+        print(f"{celsius}°C = {fahrenheit}°F yapar.")
+    else:
+        print("Geçersiz seçim!")
+
+donusturucu()
