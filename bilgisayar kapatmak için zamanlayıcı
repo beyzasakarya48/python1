@@ -1,0 +1,15 @@
+import os
+
+def bilgisayari_kapat():
+    print("--- PC Kapatma Zamanlayıcısı ---")
+    dakika = int(input("Kaç dakika sonra kapatılsın?: "))
+    saniye = dakika * 60
+
+    # Windows için kapatma komutu: shutdown /s /t saniye
+    # /s = kapat, /t = süre, /a = iptal
+    os.system(f"shutdown /s /t {saniye}")
+    
+    print(f"Bilgisayar {dakika} dakika sonra kapanacak.")
+    print("İptal etmek için terminale 'shutdown /a' yazabilirsin.")
+
+bilgisayari_kapat()
