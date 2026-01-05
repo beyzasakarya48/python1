@@ -1,0 +1,54 @@
+import random
+
+def kelime_avcisi():
+    # Kelime havuzu
+    kelimeler = ["python", "yazilim", "degisken", "dongu", "fonksiyon", "kutuphane"]
+    secilen_kelime = random.choice(kelimeler)
+    tahmin_edilen_harfler = []
+    can = 6
+
+    print("--- KELİME AVCISINA HOŞ GELDİN ---")
+    
+    while can > 0:
+        ekran_gorunumu = ""
+        # Kelimeyi harf harf kontrol et
+        for harf in secilen_kelime:
+            if harf in tahmin_edilen_harfler:
+                ekran_gorunumu += harf + " "
+            else:
+                ekran_gorunumu += "_ "
+        
+        print(f"\nKelime: {ekran_gorunumu}")
+        print(f"Kalan Can: {can}")
+        print(f"Kullanılan Harfler: {', '.join(tahmin_edilen_harfler)}")
+
+        # Hepsi doğru bilindi mi?
+        if "_" not in ekran_gorunumu:
+            print("\nTEBRİKLER! Kelimeyi buldun: " + secilen_kelime)
+            break
+
+        tahmin = input("Bir harf tahmin et: ").lower()
+
+        # Giriş kontrolü
+        if len(tahmin) != 1 or not tahmin.isalpha():
+            print("Lütfen sadece tek bir harf gir!")
+            continue
+        
+        if tahmin in tahmin_edilen_harfler:
+            print("Bu harfi zaten denedin!")
+            continue
+
+        tahmin_edilen_harfler.append(tahmin)
+
+        # Doğru mu yanlış mı?
+        if tahmin in secilen_kelime:
+            print("Doğru tahmin!")
+        else:
+            can -= 1
+            print("Maalesef, yanlış harf.")
+
+    if can == 0:
+        print("\nOyun bitti! Canın tükendi.")
+        print(f"Doğru kelime şuydu: {secilen_kelime}")
+
+kelime_avcisi()
