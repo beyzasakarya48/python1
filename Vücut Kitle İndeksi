@@ -1,0 +1,15 @@
+kilo = float(input("Kilonuzu girin (kg): "))
+boy = float(input("Boyunuzu girin (metre cinsinden, örn: 1.75): "))
+
+vki = kilo / (boy ** 2)
+
+print(f"Vücut Kitle İndeksiniz: {round(vki, 2)}")
+
+if vki < 18.5:
+    print("Durum: Zayıf")
+elif 18.5 <= vki < 25:
+    print("Durum: Normal")
+elif 25 <= vki < 30:
+    print("Durum: Fazla Kilolu")
+else:
+    print("Durum: Obez")
