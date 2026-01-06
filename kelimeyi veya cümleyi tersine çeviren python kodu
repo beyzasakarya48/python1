@@ -1,0 +1,9 @@
+metin = input("Bir kelime veya cümle yaz: ")
+
+# Python'da [::-1] ifadesi bir diziyi tersten okur
+ters_metin = metin[::-1]
+
+print(f"Yazdığının tersi: {ters_metin}")
+
+if metin.lower() == ters_metin.lower():
+    print("Vay canına! Bu bir 'Palindrom' (tersten de aynı okunan kelime).")
