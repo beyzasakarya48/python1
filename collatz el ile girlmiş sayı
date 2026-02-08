@@ -1,0 +1,25 @@
+def collatz_hesapla(n):
+    adim_sayisi = 0
+    en_yuksek_deger = n
+    
+    print(f"Başlangıç sayısı: {n}")
+    
+    while n != 1:
+        if n % 2 == 0:
+            n = n // 2
+        else:
+            n = 3 * n + 1
+        
+        adim_sayisi += 1
+        if n > en_yuksek_deger:
+            en_yuksek_deger = n
+            
+        print(f"Adım {adim_sayisi}: {n}")
+    
+    print("-" * 20)
+    print(f"Döngü Tamamlandı!")
+    print(f"Toplam Adım: {adim_sayisi}")
+    print(f"Ulaşılan En Yüksek Değer: {en_yuksek_deger}")
+
+# Az önce denediğimiz sayıyı buraya yazıp çalıştırabilirsin
+collatz_hesapla(4564563)
