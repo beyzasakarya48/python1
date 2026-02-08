@@ -1,0 +1,51 @@
+import sys
+
+def collatz_simulasyonu():
+    print("-" * 30)
+    print(" COLLATZ SANISI SİMÜLATÖRÜ ")
+    print("-" * 30)
+    
+    try:
+        # Kullanıcıdan sayı alalım
+        sayi = int(input("Başlangıç sayısını giriniz: "))
+        
+        if sayi <= 0:
+            print("Lütfen pozitif bir tam sayı girin!")
+            return
+
+        baslangic_sayisi = sayi
+        adimlar = []
+        en_yuksek = sayi
+        
+        print(f"\n[Süreç Başlatılıyor: {sayi}]")
+        
+        while sayi != 1:
+            adimlar.append(sayi)
+            if sayi % 2 == 0:
+                sayi //= 2
+            else:
+                sayi = 3 * sayi + 1
+            
+            if sayi > en_yuksek:
+                en_yuksek = sayi
+                
+            # Adımları anlık olarak gör
+            print(f"Adım {len(adimlar)}: {sayi}")
+            
+        adimlar.append(1) # Son 1 değerini ekle
+        
+        # Özet Tablo
+        print("\n" + "="*30)
+        print(f"📊 SONUÇ ANALİZİ")
+        print("="*30)
+        print(f"🚀 Başlangıç Sayısı : {baslangic_sayisi}")
+        print(f"🏁 Toplam Adım      : {len(adimlar) - 1}")
+        print(f"🔝 Zirve Değer      : {en_yuksek}")
+        print(f"🔄 Son Döngü        : 4 -> 2 -> 1")
+        print("="*30)
+
+    except ValueError:
+        print("Hata: Lütfen geçerli bir tam sayı giriniz.")
+
+if __name__ == "__main__":
+    collatz_simulasyonu()
